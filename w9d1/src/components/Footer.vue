@@ -14,11 +14,15 @@
 <script>
 
 export default {
-    data() {
-        return {
-            nameInput: "",
-            emailInput: "",
+    props: ["nameInput", "emailInput"],
+    watch: {
+        nameInput(value){
+            this.$emit("update", value)
+        },
+        emailInput(value){
+            this.$emit("updateEmail", value)
         }
+
     }
 
 }
